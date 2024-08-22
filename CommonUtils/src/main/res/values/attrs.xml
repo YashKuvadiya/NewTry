@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CommonImage">
+        <attr name="IC_ProgressBarColor" format="color" />
+        <attr name="IC_ImageScaleType" format="enum">
+            <enum name="matrix" value="0" />
+            <enum name="fitXY" value="1" />
+            <enum name="fitStart" value="2" />
+            <enum name="fitCenter" value="3" />
+            <enum name="fitEnd" value="4" />
+            <enum name="center" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="centerInside" value="7" />
+        </attr>
+        <attr name="IC_LottieScaleType" format="enum">
+            <enum name="matrix" value="0" />
+            <enum name="fitXY" value="1" />
+            <enum name="fitStart" value="2" />
+            <enum name="fitCenter" value="3" />
+            <enum name="fitEnd" value="4" />
+            <enum name="center" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="centerInside" value="7" />
+        </attr>
+        <attr name="IC_AdjustViewBound" format="boolean" />
+        <attr name="IC_LottieAutoPlay" format="boolean" />
+        <attr name="IC_LottieLoop" format="boolean" />
+        <attr name="IC_ProgressBarSize" format="dimension" />
+    </declare-styleable>
+</resources>
