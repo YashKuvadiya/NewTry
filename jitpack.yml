@@ -1,0 +1,9 @@
+jdk:
+  - jdk-22
+before install:
+  - ./scripts/prepareJitpackEnvironment.sh
+install:
+  Fl — aar"
+— mvn install:
+  - FILE="-Dfile=CommonUtils-release.aar"
+  - mvn install:install-file $FILE -DgroupID=
