@@ -1,5 +1,19 @@
+
+buildscript {
+//    ext.kotlin_version = "1.7.20"
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.0.2"
+    }
+}
+
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 }
 
 android {
@@ -16,14 +30,25 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'consumer-rules.pro'
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+java {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
 }
 
 dependencies {
@@ -38,4 +63,20 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
     implementation 'com.github.bumptech.glide:glide:4.16.0'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = "com.github.YashKuvadiya"
+            artifactId = "CommonUtils"
+            version = "1.0.0"
+            pom {
+                description = "First Android"
+            }
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }
